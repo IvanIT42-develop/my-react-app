@@ -85,9 +85,37 @@ padding-left: 0;
 .plusbtn{
   border-radius: 5px;
   padding: 0;
-  margin: 0;
+  height: 32px;
+  align-self: center;
 }
 .caption{
   padding-left: 20px;
   margin-block: auto;
+}
+.greensneak{
+  display: flex;
+  justify-self: center;
+}
+.span1{
+  width: 150px;
+  display: flex;
+  justify-self: center;
+  font-size: 14px;
+}
+.h42{
+  color: rgb(156, 150, 143);
+margin: 0;
+}
+.priceandadd{
+  display: grid;
+ grid-template-columns: auto auto;
+ grid-template-rows: auto;
+ justify-self: center;
+ height: 100px;
+ align-items: center;
+ grid-column-gap: 50px;
+}
+.captionicons{
+margin-bottom: -5px;
+padding-right: 5px;
 }
