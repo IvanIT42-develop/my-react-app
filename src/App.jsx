@@ -5,6 +5,16 @@ import like from "./assets/img/like.png";
 import profile from "./assets/img/profile.png"; 
 import green from "./assets/img/greenandwhite.png"; 
 import plus from "./assets/img/plus.png"; 
+import black from "./assets/img/black.png";
+import blackandblue from "./assets/img/blackandblue.png";
+import manycolor from "./assets/img/manycolor.png";
+import onlysalat from "./assets/img/onlysalat.png";
+import orangeandsalat from "./assets/img/orangeandsalat.png";
+import white from "./assets/img/white.png";
+import whiteandblack from "./assets/img/whiteandblack.png";
+import yellow from "./assets/img/yellow.png";
+import blackandred from "./assets/img/blackandred.png";
+import blackandwhitenike from "./assets/img/blackandwhitenike.png";
 function  App() {
 return (
   <>
@@ -37,6 +47,225 @@ return (
         <h1 className="h12">Кроссовки</h1>
         <div className=" content1">
           <div className="card">
+            <div className="paddinglike">
+              <img src={like} alt="" className="likebtn" />
+            </div>
+            <img
+              src={green}
+              alt=""
+              width={133}
+              height={112}
+              className="greensneak zindex"
+            />
+            <span className="span1">
+              Мужские Кроссовки Nike Blazer Mid Suede
+            </span>
+            <div className="priceandadd">
+              <div>
+                <h4 className="h42">Цена:</h4>
+                <span>12999 руб.</span>
+              </div>
+              <div className="plusbtn padding">
+                <img src={plus} alt="" className=" padding" />
+              </div>
+            </div>
+          </div>
+          <div className="card">
+            <div className="paddinglike">
+              <img src={like} alt="" className="likebtn" />
+            </div>
+            <img
+              src={blackandblue}
+              alt=""
+              width={133}
+              height={112}
+              className="greensneak zindex"
+            />
+            <span className="span1">
+              Мужские Кроссовки Nike Blazer Mid Suede
+            </span>
+            <div className="priceandadd">
+              <div>
+                <h4 className="h42">Цена:</h4>
+                <span>12999 руб.</span>
+              </div>
+              <div className="plusbtn padding">
+                <img src={plus} alt="" className=" padding" />
+              </div>
+            </div>
+          </div>
+          <div className="card">
+            <div className="paddinglike">
+              <img src={like} alt="" className="likebtn" />
+            </div>{" "}
+            <img
+              src={blackandred}
+              alt=""
+              width={133}
+              height={112}
+              className="greensneak"
+            />
+            <span className="span1">
+              Мужские Кроссовки Nike Blazer Mid Suede
+            </span>
+            <div className="priceandadd">
+              <div>
+                <h4 className="h42">Цена:</h4>
+                <span>12999 руб.</span>
+              </div>
+              <div className="plusbtn padding">
+                <img src={plus} alt="" className=" padding" />
+              </div>
+            </div>
+          </div>
+          <div className="card">
+            <div className="paddinglike">
+              <img src={like} alt="" className="likebtn" />
+            </div>{" "}
+            <img
+              src={manycolor}
+              alt=""
+              width={133}
+              height={112}
+              className="greensneak"
+            />
+            <span className="span1">
+              Мужские Кроссовки Nike Blazer Mid Suede
+            </span>
+            <div className="priceandadd">
+              <div>
+                <h4 className="h42">Цена:</h4>
+                <span>12999 руб.</span>
+              </div>
+              <div className="plusbtn padding">
+                <img src={plus} alt="" className=" padding" />
+              </div>
+            </div>
+          </div>
+          <div className="card">
+            <div className="paddinglike">
+              <img src={like} alt="" className="likebtn" />
+            </div>{" "}
+            <img
+              src={onlysalat}
+              alt=""
+              width={133}
+              height={112}
+              className="greensneak"
+            />
+            <span className="span1">
+              Мужские Кроссовки Nike Blazer Mid Suede
+            </span>
+            <div className="priceandadd">
+              <div>
+                <h4 className="h42">Цена:</h4>
+                <span>12999 руб.</span>
+              </div>
+              <div className="plusbtn padding">
+                <img src={plus} alt="" className=" padding" />
+              </div>
+            </div>
+          </div>
+          <div className="card">
+            <div className="paddinglike">
+              <img src={like} alt="" className="likebtn" />
+            </div>{" "}
+            <img
+              src={orangeandsalat}
+              alt=""
+              width={133}
+              height={112}
+              className="greensneak"
+            />
+            <span className="span1">
+              Мужские Кроссовки Nike Blazer Mid Suede
+            </span>
+            <div className="priceandadd">
+              <div>
+                <h4 className="h42">Цена:</h4>
+                <span>12999 руб.</span>
+              </div>
+              <div className="plusbtn padding">
+                <img src={plus} alt="" className=" padding" />
+              </div>
+            </div>
+          </div>
+          <div className="card">
+            <div className="paddinglike">
+              <img src={like} alt="" className="likebtn" />
+            </div>{" "}
+            <img
+              src={whiteandblack}
+              alt=""
+              width={133}
+              height={112}
+              className="greensneak"
+            />
+            <span className="span1">
+              Мужские Кроссовки Nike Blazer Mid Suede
+            </span>
+            <div className="priceandadd">
+              <div>
+                <h4 className="h42">Цена:</h4>
+                <span>12999 руб.</span>
+              </div>
+              <div className="plusbtn padding">
+                <img src={plus} alt="" className=" padding" />
+              </div>
+            </div>
+          </div>
+          <div className="card">
+            <div className="paddinglike">
+              <img src={like} alt="" className="likebtn" />
+            </div>{" "}
+            <img
+              src={yellow}
+              alt=""
+              width={133}
+              height={112}
+              className="greensneak"
+            />
+            <span className="span1">
+              Мужские Кроссовки Nike Blazer Mid Suede
+            </span>
+            <div className="priceandadd">
+              <div>
+                <h4 className="h42">Цена:</h4>
+                <span>12999 руб.</span>
+              </div>
+              <div className="plusbtn padding">
+                <img src={plus} alt="" className=" padding" />
+              </div>
+            </div>
+          </div>
+          <div className="card">
+            <div className="paddinglike">
+              <img src={like} alt="" className="likebtn" />
+            </div>{" "}
+            <img
+              src={blackandwhitenike}
+              alt=""
+              width={133}
+              height={112}
+              className="greensneak"
+            />
+            <span className="span1">
+              Мужские Кроссовки Nike Blazer Mid Suede
+            </span>
+            <div className="priceandadd">
+              <div>
+                <h4 className="h42">Цена:</h4>
+                <span>12999 руб.</span>
+              </div>
+              <div className="plusbtn padding">
+                <img src={plus} alt="" className=" padding" />
+              </div>
+            </div>
+          </div>
+          <div className="card">
+            <div className="paddinglike">
+              <img src={like} alt="" className="likebtn" />
+            </div>{" "}
             <img
               src={green}
               alt=""
@@ -58,8 +287,11 @@ return (
             </div>
           </div>
           <div className="card">
+            <div className="paddinglike">
+              <img src={like} alt="" className="likebtn" />
+            </div>{" "}
             <img
-              src={green}
+              src={manycolor}
               alt=""
               width={133}
               height={112}
@@ -79,207 +311,11 @@ return (
             </div>
           </div>
           <div className="card">
-            {" "}
+            <div className="paddinglike">
+              <img src={like} alt="" className="likebtn" />
+            </div>{" "}
             <img
-              src={green}
-              alt=""
-              width={133}
-              height={112}
-              className="greensneak"
-            />
-            <span className="span1">
-              Мужские Кроссовки Nike Blazer Mid Suede
-            </span>
-            <div className="priceandadd">
-              <div>
-                <h4 className="h42">Цена:</h4>
-                <span>12999 руб.</span>
-              </div>
-              <div className="plusbtn padding">
-                <img src={plus} alt="" className=" padding" />
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            {" "}
-            <img
-              src={green}
-              alt=""
-              width={133}
-              height={112}
-              className="greensneak"
-            />
-            <span className="span1">
-              Мужские Кроссовки Nike Blazer Mid Suede
-            </span>
-            <div className="priceandadd">
-              <div>
-                <h4 className="h42">Цена:</h4>
-                <span>12999 руб.</span>
-              </div>
-              <div className="plusbtn padding">
-                <img src={plus} alt="" className=" padding" />
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            {" "}
-            <img
-              src={green}
-              alt=""
-              width={133}
-              height={112}
-              className="greensneak"
-            />
-            <span className="span1">
-              Мужские Кроссовки Nike Blazer Mid Suede
-            </span>
-            <div className="priceandadd">
-              <div>
-                <h4 className="h42">Цена:</h4>
-                <span>12999 руб.</span>
-              </div>
-              <div className="plusbtn padding">
-                <img src={plus} alt="" className=" padding" />
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            {" "}
-            <img
-              src={green}
-              alt=""
-              width={133}
-              height={112}
-              className="greensneak"
-            />
-            <span className="span1">
-              Мужские Кроссовки Nike Blazer Mid Suede
-            </span>
-            <div className="priceandadd">
-              <div>
-                <h4 className="h42">Цена:</h4>
-                <span>12999 руб.</span>
-              </div>
-              <div className="plusbtn padding">
-                <img src={plus} alt="" className=" padding" />
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            {" "}
-            <img
-              src={green}
-              alt=""
-              width={133}
-              height={112}
-              className="greensneak"
-            />
-            <span className="span1">
-              Мужские Кроссовки Nike Blazer Mid Suede
-            </span>
-            <div className="priceandadd">
-              <div>
-                <h4 className="h42">Цена:</h4>
-                <span>12999 руб.</span>
-              </div>
-              <div className="plusbtn padding">
-                <img src={plus} alt="" className=" padding" />
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            {" "}
-            <img
-              src={green}
-              alt=""
-              width={133}
-              height={112}
-              className="greensneak"
-            />
-            <span className="span1">
-              Мужские Кроссовки Nike Blazer Mid Suede
-            </span>
-            <div className="priceandadd">
-              <div>
-                <h4 className="h42">Цена:</h4>
-                <span>12999 руб.</span>
-              </div>
-              <div className="plusbtn padding">
-                <img src={plus} alt="" className=" padding" />
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            {" "}
-            <img
-              src={green}
-              alt=""
-              width={133}
-              height={112}
-              className="greensneak"
-            />
-            <span className="span1">
-              Мужские Кроссовки Nike Blazer Mid Suede
-            </span>
-            <div className="priceandadd">
-              <div>
-                <h4 className="h42">Цена:</h4>
-                <span>12999 руб.</span>
-              </div>
-              <div className="plusbtn padding">
-                <img src={plus} alt="" className=" padding" />
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            {" "}
-            <img
-              src={green}
-              alt=""
-              width={133}
-              height={112}
-              className="greensneak"
-            />
-            <span className="span1">
-              Мужские Кроссовки Nike Blazer Mid Suede
-            </span>
-            <div className="priceandadd">
-              <div>
-                <h4 className="h42">Цена:</h4>
-                <span>12999 руб.</span>
-              </div>
-              <div className="plusbtn padding">
-                <img src={plus} alt="" className=" padding" />
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            {" "}
-            <img
-              src={green}
-              alt=""
-              width={133}
-              height={112}
-              className="greensneak"
-            />
-            <span className="span1">
-              Мужские Кроссовки Nike Blazer Mid Suede
-            </span>
-            <div className="priceandadd">
-              <div>
-                <h4 className="h42">Цена:</h4>
-                <span>12999 руб.</span>
-              </div>
-              <div className="plusbtn padding">
-                <img src={plus} alt="" className=" padding" />
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            {" "}
-            <img
-              src={green}
+              src={black}
               alt=""
               width={133}
               height={112}
