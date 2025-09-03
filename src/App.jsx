@@ -81,9 +81,7 @@ return (
               height={112}
               className="greensneak zindex"
             />
-            <span className="span1">
-              Мужские Кроссовки Nike Blazer Mid Suede
-            </span>
+            <span className="span1">Мужские Кроссовки Nike LeBron XVIII</span>
             <div className="priceandadd">
               <div>
                 <h4 className="h42">Цена:</h4>
@@ -106,7 +104,7 @@ return (
               className="greensneak"
             />
             <span className="span1">
-              Мужские Кроссовки Nike Blazer Mid Suede
+              Мужские Кроссовки Jordan Air Jordan 11
             </span>
             <div className="priceandadd">
               <div>
@@ -130,7 +128,7 @@ return (
               className="greensneak"
             />
             <span className="span1">
-              Мужские Кроссовки Nike Blazer Mid Suede
+              Кроссовки Puma X Aka Boku Future Rider
             </span>
             <div className="priceandadd">
               <div>
@@ -154,7 +152,7 @@ return (
               className="greensneak"
             />
             <span className="span1">
-              Мужские Кроссовки Nike Blazer Mid Suede
+              Мужские Кроссовки Nike Kyrie Flytrap IV
             </span>
             <div className="priceandadd">
               <div>
@@ -178,7 +176,7 @@ return (
               className="greensneak"
             />
             <span className="span1">
-              Мужские Кроссовки Nike Blazer Mid Suede
+              Мужские Кроссовки Nike Lebron XVIII Low
             </span>
             <div className="priceandadd">
               <div>
@@ -201,9 +199,7 @@ return (
               height={112}
               className="greensneak"
             />
-            <span className="span1">
-              Мужские Кроссовки Nike Blazer Mid Suede
-            </span>
+            <span className="span1">Мужские Кроссовки Nike Air Max 270</span>
             <div className="priceandadd">
               <div>
                 <h4 className="h42">Цена:</h4>
@@ -226,7 +222,7 @@ return (
               className="greensneak"
             />
             <span className="span1">
-              Мужские Кроссовки Nike Blazer Mid Suede
+              Мужские Кроссовки Under Armour Curry 8
             </span>
             <div className="priceandadd">
               <div>
@@ -298,7 +294,7 @@ return (
               className="greensneak"
             />
             <span className="span1">
-              Мужские Кроссовки Nike Blazer Mid Suede
+              Кроссовки Puma X Aka Boku Future Rider
             </span>
             <div className="priceandadd">
               <div>
@@ -321,9 +317,7 @@ return (
               height={112}
               className="greensneak"
             />
-            <span className="span1">
-              Мужские Кроссовки Nike Blazer Mid Suede
-            </span>
+            <span className="span1">Мужские Кроссовки Nike Kyrie 7</span>
             <div className="priceandadd">
               <div>
                 <h4 className="h42">Цена:</h4>
