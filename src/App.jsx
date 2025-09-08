@@ -15,10 +15,79 @@ import whiteandblack from "./assets/img/whiteandblack.png";
 import yellow from "./assets/img/yellow.png";
 import blackandred from "./assets/img/blackandred.png";
 import blackandwhitenike from "./assets/img/blackandwhitenike.png";
+import search from "./assets/img/search.png";
+import likeclick from "./assets/img/likeclick.png";
+import shoponclick from "./assets/img/shoponclick.png";
+import btnremove from "./assets/img/btn-remove.png";
 function  App() {
 return (
   <>
     <div className="divpapa">
+      <div className="overlay">
+        <div className="drawer">
+          <h2>Корзина</h2>
+          <div className="items">
+            <div className="cartItem margin1">
+              <div
+                className="cartItemImg"
+                style={{
+                  backgroundImage: `url(${whiteandblack})`,
+                  height: 70,
+                  width: 70,
+                  backgroundSize: "contain",
+                  backgroundRepeat: "no-repeat",
+                }}
+              ></div>
+              <div>
+                <p className="p1">Мужские Кроссовки Nike Air Max 270 </p>
+                <b className="b1">12 999руб.</b>
+              </div>
+              <img
+                src={btnremove}
+                alt=""
+                width={32}
+                height={32}
+                className="btnremove"
+              />
+            </div>
+            <div className="cartItem">
+              <div
+                className="cartItemImg"
+                style={{
+                  backgroundImage: `url(${whiteandblack})`,
+                  height: 70,
+                  width: 70,
+                  backgroundSize: "contain",
+                  backgroundRepeat: "no-repeat",
+                }}
+              ></div>
+              <div>
+                <p className="p1">Мужские Кроссовки Nike Air Max 270 </p>
+                <b className="b1">12 999руб.</b>
+              </div>
+              <img
+                src={btnremove}
+                alt=""
+                width={32}
+                height={32}
+                className="btnremove"
+              />
+            </div>
+            <ul className="cartTotalBlock">
+              <li className="endprice">
+                <span>Итого:</span>
+                <div className="dashedline"></div>
+                <b>20 498</b>
+              </li>
+              <li className="endprice">
+                <span>Налог 5%</span>
+                <div className="dashedline"></div>
+                <b>1074 руб.</b>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <header className="header1">
         <div className="headerinfo">
           <img src={headerreSneakers} alt="" className="img1" />
@@ -44,11 +113,17 @@ return (
         </ul>
       </header>
       <div className="content ">
-        <h1 className="h12">Кроссовки</h1>
+        <div className="zagolovokwithserach">
+          <h1 className="h12">Кроссовки</h1>
+          <div className="searchinput">
+            <img src={search} alt="" className="search" />
+            <input type="text" placeholder="Поиск..." className="input1" />
+          </div>
+        </div>
         <div className=" content1">
           <div className="card">
             <div className="paddinglike">
-              <img src={like} alt="" className="likebtn" />
+              <img src={likeclick} alt="" className="likebtn onclicklike" />
             </div>
             <img
               src={green}
@@ -88,7 +163,7 @@ return (
                 <span>12999 руб.</span>
               </div>
               <div className="plusbtn padding">
-                <img src={plus} alt="" className=" padding" />
+                <img src={shoponclick} alt="" className=" padding" />
               </div>
             </div>
           </div>
