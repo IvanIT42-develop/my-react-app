@@ -19,13 +19,25 @@ import search from "./assets/img/search.png";
 import likeclick from "./assets/img/likeclick.png";
 import shoponclick from "./assets/img/shoponclick.png";
 import btnremove from "./assets/img/btn-remove.png";
+import arrow from "./assets/img/arrow.png";
+import Card from './components/card';
 function  App() {
 return (
   <>
     <div className="divpapa">
-      <div className="overlay">
+      <div  style={{display: 'none'}} className="overlay">
         <div className="drawer">
-          <h2>Корзина</h2>
+          <h2>
+            Корзина{" "}
+            <img
+              src={btnremove}
+              alt=""
+              width={32}
+              height={32}
+              className="btnremove"
+            />
+          </h2>
+
           <div className="items">
             <div className="cartItem margin1">
               <div
@@ -73,18 +85,27 @@ return (
                 className="btnremove"
               />
             </div>
-            <ul className="cartTotalBlock">
-              <li className="endprice">
-                <span>Итого:</span>
-                <div className="dashedline"></div>
-                <b>20 498</b>
-              </li>
-              <li className="endprice">
-                <span>Налог 5%</span>
-                <div className="dashedline"></div>
-                <b>1074 руб.</b>
-              </li>
-            </ul>
+          </div>
+          <div>
+            <div className="cartTotalBlock">
+              <ul>
+                <li className="endprice">
+                  <span>Итого:</span>
+                  <div className="dashedline"></div>
+                  <b>20 498 руб.</b>
+                </li>
+                <li className="endprice">
+                  <span>Налог 5%</span>
+                  <div className="dashedline"></div>
+                  <b>1074 руб.</b>
+                </li>
+              </ul>
+              <div className="centergreenbtn">
+                <button className="ligtengreen">
+                  Оформить заказ <img src={arrow} alt="" className="arrowpng" />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -121,30 +142,7 @@ return (
           </div>
         </div>
         <div className=" content1">
-          <div className="card">
-            <div className="paddinglike">
-              <img src={likeclick} alt="" className="likebtn onclicklike" />
-            </div>
-            <img
-              src={green}
-              alt=""
-              width={133}
-              height={112}
-              className="greensneak zindex"
-            />
-            <span className="span1">
-              Мужские Кроссовки Nike Blazer Mid Suede
-            </span>
-            <div className="priceandadd">
-              <div>
-                <h4 className="h42">Цена:</h4>
-                <span>12999 руб.</span>
-              </div>
-              <div className="plusbtn padding">
-                <img src={plus} alt="" className=" padding" />
-              </div>
-            </div>
-          </div>
+     <Card />
           <div className="card">
             <div className="paddinglike">
               <img src={like} alt="" className="likebtn" />
