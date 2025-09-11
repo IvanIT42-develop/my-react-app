@@ -329,3 +329,8 @@ margin-bottom: 40px;
   .arrowpng{
    
   }
+  .firstcardarr{
+    height: 100px ;
+    background-color: black;
+    display: flex;
+  }

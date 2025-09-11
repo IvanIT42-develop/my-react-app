@@ -16,123 +16,95 @@ import yellow from "./assets/img/yellow.png";
 import blackandred from "./assets/img/blackandred.png";
 import blackandwhitenike from "./assets/img/blackandwhitenike.png";
 import search from "./assets/img/search.png";
-import likeclick from "./assets/img/likeclick.png";
+import Header from './components/Header';
 import shoponclick from "./assets/img/shoponclick.png";
 import btnremove from "./assets/img/btn-remove.png";
 import arrow from "./assets/img/arrow.png";
 import Card from './components/card';
+import Drawer from './components/Drawer';
+const sneakers = [
+  {
+    id: 1,
+    name: "Мужские Кроссовки Nike Blazer Mid Suede",
+    price: "12999 руб",
+    imageUrl: blackandwhitenike,
+    greentick:shoponclick,
+  },
+  {
+    id: 2,
+    name: "Мужские Кроссовки Jordan Air Jordan 11",
+    price: "15699 руб",
+    imageUrl: whiteandblack,
+  },
+  {
+    id: 3,
+    name: "Мужские Кроссовки Nike LeBron XVIII",
+    price: "13499 руб",
+    imageUrl: blackandblue,
+  },
+  {
+    id: 4,
+    name: "Мужские Кроссовки Jordan Air Jordan 11",
+    price: "15699 руб",
+    imageUrl: blackandred,
+  },
+  {
+    id: 5,
+    name: "Кроссовки Puma X Aka Boku Future Rider",
+    price: "8999 руб",
+    imageUrl: manycolor,
+  },
+  {
+    id: 6,
+    name: "Мужские Кроссовки Nike Kyrie Flytrap IV",
+    price: "11299 руб",
+    imageUrl: onlysalat,
+  },
+  {
+    id: 7,
+    name: "Мужские Кроссовки Nike Lebron XVIII Low",
+    price: "13999 руб",
+    imageUrl: orangeandsalat,
+  },
+  {
+    id: 8,
+    name: "Мужские Кроссовки Nike Air Max 270",
+    price: "12699 руб",
+    imageUrl: whiteandblack,
+  },
+  {
+    id: 9,
+    name: "Мужские Кроссовки Under Armour Curry 8",
+    price: "11999 руб",
+    imageUrl: yellow,
+  },
+  {
+    id: 10,
+    name: "Мужские Кроссовки Nike Blazer Mid Suede",
+    price: "12999 руб",
+    imageUrl: green,
+  },
+  {
+    id: 11,
+    name: "Кроссовки Puma X Aka Boku Future Rider",
+    price: "8999 руб",
+    imageUrl: manycolor,
+  },
+  {
+    id: 12,
+    name: "Мужские Кроссовки Nike Kyrie 7",
+    price: "10999 руб",
+    imageUrl: black,
+  },
+];
 function  App() {
 return (
   <>
     <div className="divpapa">
-      <div  style={{display: 'none'}} className="overlay">
-        <div className="drawer">
-          <h2>
-            Корзина{" "}
-            <img
-              src={btnremove}
-              alt=""
-              width={32}
-              height={32}
-              className="btnremove"
-            />
-          </h2>
-
-          <div className="items">
-            <div className="cartItem margin1">
-              <div
-                className="cartItemImg"
-                style={{
-                  backgroundImage: `url(${whiteandblack})`,
-                  height: 70,
-                  width: 70,
-                  backgroundSize: "contain",
-                  backgroundRepeat: "no-repeat",
-                }}
-              ></div>
-              <div>
-                <p className="p1">Мужские Кроссовки Nike Air Max 270 </p>
-                <b className="b1">12 999руб.</b>
-              </div>
-              <img
-                src={btnremove}
-                alt=""
-                width={32}
-                height={32}
-                className="btnremove"
-              />
-            </div>
-            <div className="cartItem">
-              <div
-                className="cartItemImg"
-                style={{
-                  backgroundImage: `url(${whiteandblack})`,
-                  height: 70,
-                  width: 70,
-                  backgroundSize: "contain",
-                  backgroundRepeat: "no-repeat",
-                }}
-              ></div>
-              <div>
-                <p className="p1">Мужские Кроссовки Nike Air Max 270 </p>
-                <b className="b1">12 999руб.</b>
-              </div>
-              <img
-                src={btnremove}
-                alt=""
-                width={32}
-                height={32}
-                className="btnremove"
-              />
-            </div>
-          </div>
-          <div>
-            <div className="cartTotalBlock">
-              <ul>
-                <li className="endprice">
-                  <span>Итого:</span>
-                  <div className="dashedline"></div>
-                  <b>20 498 руб.</b>
-                </li>
-                <li className="endprice">
-                  <span>Налог 5%</span>
-                  <div className="dashedline"></div>
-                  <b>1074 руб.</b>
-                </li>
-              </ul>
-              <div className="centergreenbtn">
-                <button className="ligtengreen">
-                  Оформить заказ <img src={arrow} alt="" className="arrowpng" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div style={{ display: "none" }} className="overlay">
+        <Drawer />
       </div>
-      <header className="header1">
-        <div className="headerinfo">
-          <img src={headerreSneakers} alt="" className="img1" />
-          <div className="caption">
-            <h3 className="h31">REACT SNEAKERS</h3>{" "}
-            <span>Магазин лучшиx кроссовок</span>
-          </div>
-        </div>
-
-        <ul className="manyicons">
-          <li>
-            <img src={purchases} alt="" className="captionicons" />
-            <span>1205руб</span>
-          </li>
-          <li>
-            <img src={like} alt="" className="captionicons" />
-            <span>Закладки</span>
-          </li>
-          <li>
-            <img src={profile} alt="" className="captionicons" />
-            <span>Профиль</span>
-          </li>
-        </ul>
-      </header>
+      <Header />
       <div className="content ">
         <div className="zagolovokwithserach">
           <h1 className="h12">Кроссовки</h1>
@@ -142,265 +114,16 @@ return (
           </div>
         </div>
         <div className=" content1">
-     <Card />
-          <div className="card">
-            <div className="paddinglike">
-              <img src={like} alt="" className="likebtn" />
-            </div>
-            <img
-              src={blackandblue}
-              alt=""
-              width={133}
-              height={112}
-              className="greensneak zindex"
-            />
-            <span className="span1">Мужские Кроссовки Nike LeBron XVIII</span>
-            <div className="priceandadd">
-              <div>
-                <h4 className="h42">Цена:</h4>
-                <span>12999 руб.</span>
-              </div>
-              <div className="plusbtn padding">
-                <img src={shoponclick} alt="" className=" padding" />
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            <div className="paddinglike">
-              <img src={like} alt="" className="likebtn" />
-            </div>{" "}
-            <img
-              src={blackandred}
-              alt=""
-              width={133}
-              height={112}
-              className="greensneak"
-            />
-            <span className="span1">
-              Мужские Кроссовки Jordan Air Jordan 11
-            </span>
-            <div className="priceandadd">
-              <div>
-                <h4 className="h42">Цена:</h4>
-                <span>12999 руб.</span>
-              </div>
-              <div className="plusbtn padding">
-                <img src={plus} alt="" className=" padding" />
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            <div className="paddinglike">
-              <img src={like} alt="" className="likebtn" />
-            </div>{" "}
-            <img
-              src={manycolor}
-              alt=""
-              width={133}
-              height={112}
-              className="greensneak"
-            />
-            <span className="span1">
-              Кроссовки Puma X Aka Boku Future Rider
-            </span>
-            <div className="priceandadd">
-              <div>
-                <h4 className="h42">Цена:</h4>
-                <span>12999 руб.</span>
-              </div>
-              <div className="plusbtn padding">
-                <img src={plus} alt="" className=" padding" />
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            <div className="paddinglike">
-              <img src={like} alt="" className="likebtn" />
-            </div>{" "}
-            <img
-              src={onlysalat}
-              alt=""
-              width={133}
-              height={112}
-              className="greensneak"
-            />
-            <span className="span1">
-              Мужские Кроссовки Nike Kyrie Flytrap IV
-            </span>
-            <div className="priceandadd">
-              <div>
-                <h4 className="h42">Цена:</h4>
-                <span>12999 руб.</span>
-              </div>
-              <div className="plusbtn padding">
-                <img src={plus} alt="" className=" padding" />
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            <div className="paddinglike">
-              <img src={like} alt="" className="likebtn" />
-            </div>{" "}
-            <img
-              src={orangeandsalat}
-              alt=""
-              width={133}
-              height={112}
-              className="greensneak"
-            />
-            <span className="span1">
-              Мужские Кроссовки Nike Lebron XVIII Low
-            </span>
-            <div className="priceandadd">
-              <div>
-                <h4 className="h42">Цена:</h4>
-                <span>12999 руб.</span>
-              </div>
-              <div className="plusbtn padding">
-                <img src={plus} alt="" className=" padding" />
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            <div className="paddinglike">
-              <img src={like} alt="" className="likebtn" />
-            </div>{" "}
-            <img
-              src={whiteandblack}
-              alt=""
-              width={133}
-              height={112}
-              className="greensneak"
-            />
-            <span className="span1">Мужские Кроссовки Nike Air Max 270</span>
-            <div className="priceandadd">
-              <div>
-                <h4 className="h42">Цена:</h4>
-                <span>12999 руб.</span>
-              </div>
-              <div className="plusbtn padding">
-                <img src={plus} alt="" className=" padding" />
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            <div className="paddinglike">
-              <img src={like} alt="" className="likebtn" />
-            </div>{" "}
-            <img
-              src={yellow}
-              alt=""
-              width={133}
-              height={112}
-              className="greensneak"
-            />
-            <span className="span1">
-              Мужские Кроссовки Under Armour Curry 8
-            </span>
-            <div className="priceandadd">
-              <div>
-                <h4 className="h42">Цена:</h4>
-                <span>12999 руб.</span>
-              </div>
-              <div className="plusbtn padding">
-                <img src={plus} alt="" className=" padding" />
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            <div className="paddinglike">
-              <img src={like} alt="" className="likebtn" />
-            </div>{" "}
-            <img
-              src={blackandwhitenike}
-              alt=""
-              width={133}
-              height={112}
-              className="greensneak"
-            />
-            <span className="span1">
-              Мужские Кроссовки Nike Blazer Mid Suede
-            </span>
-            <div className="priceandadd">
-              <div>
-                <h4 className="h42">Цена:</h4>
-                <span>12999 руб.</span>
-              </div>
-              <div className="plusbtn padding">
-                <img src={plus} alt="" className=" padding" />
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            <div className="paddinglike">
-              <img src={like} alt="" className="likebtn" />
-            </div>{" "}
-            <img
-              src={green}
-              alt=""
-              width={133}
-              height={112}
-              className="greensneak"
-            />
-            <span className="span1">
-              Мужские Кроссовки Nike Blazer Mid Suede
-            </span>
-            <div className="priceandadd">
-              <div>
-                <h4 className="h42">Цена:</h4>
-                <span>12999 руб.</span>
-              </div>
-              <div className="plusbtn padding">
-                <img src={plus} alt="" className=" padding" />
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            <div className="paddinglike">
-              <img src={like} alt="" className="likebtn" />
-            </div>{" "}
-            <img
-              src={manycolor}
-              alt=""
-              width={133}
-              height={112}
-              className="greensneak"
-            />
-            <span className="span1">
-              Кроссовки Puma X Aka Boku Future Rider
-            </span>
-            <div className="priceandadd">
-              <div>
-                <h4 className="h42">Цена:</h4>
-                <span>12999 руб.</span>
-              </div>
-              <div className="plusbtn padding">
-                <img src={plus} alt="" className=" padding" />
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            <div className="paddinglike">
-              <img src={like} alt="" className="likebtn" />
-            </div>{" "}
-            <img
-              src={black}
-              alt=""
-              width={133}
-              height={112}
-              className="greensneak"
-            />
-            <span className="span1">Мужские Кроссовки Nike Kyrie 7</span>
-            <div className="priceandadd">
-              <div>
-                <h4 className="h42">Цена:</h4>
-                <span>12999 руб.</span>
-              </div>
-              <div className="plusbtn padding">
-                <img src={plus} alt="" className=" padding" />
-              </div>
-            </div>
-          </div>
+
+            {sneakers.map((val) => (
+              <Card
+                title={val.name}
+                price={val.price}
+                imageUrl={val.imageUrl}
+                greentick={val.greentick}
+              />
+            ))}
+     
         </div>
       </div>
     </div>
