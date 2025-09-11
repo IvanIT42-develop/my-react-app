@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import headerreSneakers from "../assets/img/headersneakers.png";
 import "../App.css";
 import purchases from "../assets/img/purchases.png";
@@ -21,7 +21,7 @@ import search from "../assets/img/search.png";
 import shoponclick from "../assets/img/shoponclick.png";
 import btnremove from "../assets/img/btn-remove.png";
 import arrow from "../assets/img/arrow.png";
-import Card from "../components/card";
+import Card from "./Card/Card";
 function Header() {
   return (
     <div>
@@ -53,4 +53,4 @@ function Header() {
   );
 }
 
-export default Header
+export default Header;

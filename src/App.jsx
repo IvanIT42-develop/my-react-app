@@ -1,10 +1,10 @@
-import headerreSneakers from './assets/img/headersneakers.png'
-import './App.css'
-import purchases from './assets/img/purchases.png'
+import headerreSneakers from "./assets/img/headersneakers.png";
+import "./App.css";
+import purchases from "./assets/img/purchases.png";
 import like from "./assets/img/like.png";
-import profile from "./assets/img/profile.png"; 
-import green from "./assets/img/greenandwhite.png"; 
-import plus from "./assets/img/plus.png"; 
+import profile from "./assets/img/profile.png";
+import green from "./assets/img/greenandwhite.png";
+import plus from "./assets/img/plus.png";
 import black from "./assets/img/black.png";
 import blackandblue from "./assets/img/blackandblue.png";
 import manycolor from "./assets/img/manycolor.png";
@@ -16,19 +16,19 @@ import yellow from "./assets/img/yellow.png";
 import blackandred from "./assets/img/blackandred.png";
 import blackandwhitenike from "./assets/img/blackandwhitenike.png";
 import search from "./assets/img/search.png";
-import Header from './components/Header';
+import Header from "./components/Header";
 import shoponclick from "./assets/img/shoponclick.png";
 import btnremove from "./assets/img/btn-remove.png";
 import arrow from "./assets/img/arrow.png";
-import Card from './components/card';
-import Drawer from './components/Drawer';
+import Card from "./components/Card/Card";
+import Drawer from "./components/Drawer";
 const sneakers = [
   {
     id: 1,
     name: "Мужские Кроссовки Nike Blazer Mid Suede",
     price: "12999 руб",
     imageUrl: blackandwhitenike,
-    greentick:shoponclick,
+    greentick: shoponclick,
   },
   {
     id: 2,
@@ -97,37 +97,37 @@ const sneakers = [
     imageUrl: black,
   },
 ];
-function  App() {
-return (
-  <>
-    <div className="divpapa">
-      <div style={{ display: "none" }} className="overlay">
-        <Drawer />
-      </div>
-      <Header />
-      <div className="content ">
-        <div className="zagolovokwithserach">
-          <h1 className="h12">Кроссовки</h1>
-          <div className="searchinput">
-            <img src={search} alt="" className="search" />
-            <input type="text" placeholder="Поиск..." className="input1" />
-          </div>
+function App() {
+  return (
+    <>
+      <div className="divpapa">
+        <div style={{ display: "none" }} className="overlay">
+          <Drawer />
         </div>
-        <div className=" content1">
-
+        <Header />
+        <div className="content ">
+          <div className="zagolovokwithserach">
+            <h1 className="h12">Кроссовки</h1>
+            <div className="searchinput">
+              <img src={search} alt="" className="search" />
+              <input type="text" placeholder="Поиск..." className="input1" />
+            </div>
+          </div>
+          <div className=" content1">
             {sneakers.map((val) => (
               <Card
+              key={val.id}
+                onClick={() => console.log(val)}
                 title={val.name}
                 price={val.price}
                 imageUrl={val.imageUrl}
                 greentick={val.greentick}
               />
             ))}
-     
+          </div>
         </div>
       </div>
-    </div>
-  </>
-);
+    </>
+  );
 }
-export default App
+export default App;
