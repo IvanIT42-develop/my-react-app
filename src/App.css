@@ -79,10 +79,7 @@ padding-right: 50px;
  padding-bottom: 20px;
 }
 
-.card:hover{
-  box-shadow: 0px 20px 30px rgba(0,0,0,0.06);
-  transform: translateY(-5px);
-}
+
 .sneakerscenter{
   display: flex;
  padding-inline: 38.5px;
@@ -288,4 +285,7 @@ margin-bottom: 40px;
     height: 100px ;
     background-color: black;
     display: flex;
+  }
+  .a{
+    cursor: pointer;
   }

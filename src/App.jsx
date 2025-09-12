@@ -22,89 +22,44 @@ import btnremove from "./assets/img/btn-remove.png";
 import arrow from "./assets/img/arrow.png";
 import Card from "./components/Card/Card";
 import Drawer from "./components/Drawer";
-const sneakers = [
-  {
-    id: 1,
-    name: "Мужские Кроссовки Nike Blazer Mid Suede",
-    price: "12999 руб",
-    imageUrl: blackandwhitenike,
-    greentick: shoponclick,
-  },
-  {
-    id: 2,
-    name: "Мужские Кроссовки Jordan Air Jordan 11",
-    price: "15699 руб",
-    imageUrl: whiteandblack,
-  },
-  {
-    id: 3,
-    name: "Мужские Кроссовки Nike LeBron XVIII",
-    price: "13499 руб",
-    imageUrl: blackandblue,
-  },
-  {
-    id: 4,
-    name: "Мужские Кроссовки Jordan Air Jordan 11",
-    price: "15699 руб",
-    imageUrl: blackandred,
-  },
-  {
-    id: 5,
-    name: "Кроссовки Puma X Aka Boku Future Rider",
-    price: "8999 руб",
-    imageUrl: manycolor,
-  },
-  {
-    id: 6,
-    name: "Мужские Кроссовки Nike Kyrie Flytrap IV",
-    price: "11299 руб",
-    imageUrl: onlysalat,
-  },
-  {
-    id: 7,
-    name: "Мужские Кроссовки Nike Lebron XVIII Low",
-    price: "13999 руб",
-    imageUrl: orangeandsalat,
-  },
-  {
-    id: 8,
-    name: "Мужские Кроссовки Nike Air Max 270",
-    price: "12699 руб",
-    imageUrl: whiteandblack,
-  },
-  {
-    id: 9,
-    name: "Мужские Кроссовки Under Armour Curry 8",
-    price: "11999 руб",
-    imageUrl: yellow,
-  },
-  {
-    id: 10,
-    name: "Мужские Кроссовки Nike Blazer Mid Suede",
-    price: "12999 руб",
-    imageUrl: green,
-  },
-  {
-    id: 11,
-    name: "Кроссовки Puma X Aka Boku Future Rider",
-    price: "8999 руб",
-    imageUrl: manycolor,
-  },
-  {
-    id: 12,
-    name: "Мужские Кроссовки Nike Kyrie 7",
-    price: "10999 руб",
-    imageUrl: black,
-  },
-];
+import { useEffect, useState } from "react";
+import { useContext } from "react";
+const imageMap = {
+  blackandwhitenike: blackandwhitenike,
+  whiteandblack: whiteandblack,
+  blackandblue: blackandblue,
+  blackandred: blackandred,
+  manycolor: manycolor,
+  onlysalat: onlysalat,
+  orangeandsalat: orangeandsalat,
+  yellow: yellow,
+  green: green,
+  black: black,
+  shoponclick: shoponclick,
+};
+
+
 function App() {
+  const [items,setItems] =useState([])
+  const [cardOpened, setcardOpened] = useState(false);
+  const [count, setCount] = useState(0);
+useEffect(()=>{
+ fetch("https://68c4305081ff90c8e61b84db.mockapi.io/items")
+   .then((res) => {
+     return res.json();
+   })
+   .then((json) => {
+     setItems(json);
+     
+   });
+},[])
   return (
     <>
       <div className="divpapa">
-        <div style={{ display: "none" }} className="overlay">
-          <Drawer />
-        </div>
-        <Header />
+        {cardOpened ? (
+          <Drawer onCloseCard={() => setcardOpened(false)} />
+        ) : null}
+        <Header onClickCard={() => setcardOpened(true)} />
         <div className="content ">
           <div className="zagolovokwithserach">
             <h1 className="h12">Кроссовки</h1>
@@ -114,14 +69,20 @@ function App() {
             </div>
           </div>
           <div className=" content1">
-            {sneakers.map((val) => (
+            {items.map((val) => (
               <Card
-              key={val.id}
+                key={val.id}
                 onClick={() => console.log(val)}
                 title={val.name}
                 price={val.price}
-                imageUrl={val.imageUrl}
+                imageUrl={imageMap[val.imageUrl]}
                 greentick={val.greentick}
+                plusbtn={plus}
+                onPlus={() => {}}
+                shoponclick={shoponclick}
+                onFavorite={() => {
+                  console.log("Добавили в закладки");
+                }}
               />
             ))}
           </div>

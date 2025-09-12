@@ -22,87 +22,90 @@ import shoponclick from "../assets/img/shoponclick.png";
 import btnremove from "../assets/img/btn-remove.png";
 import arrow from "../assets/img/arrow.png";
 import Card from "./Card/Card";
-function Drawer() {
+function Drawer(props) {
   return (
-    <div>
-      <div className="drawer">
-        <h2>
-          Корзина{" "}
-          <img
-            src={btnremove}
-            alt=""
-            width={32}
-            height={32}
-            className="btnremove"
-          />
-        </h2>
+    <div  className="overlay">
+      <div>
+        <div className="drawer">
+          <h2>
+            Корзина{" "}
+            <img
+              src={btnremove}
+              alt=""
+              width={32}
+              height={32}
+              className="btnremove"
+             onClick={props.onCloseCard}
+            />
+          </h2>
 
-        <div className="items">
-          <div className="cartItem margin1">
-            <div
-              className="cartItemImg"
-              style={{
-                backgroundImage: `url(${whiteandblack})`,
-                height: 70,
-                width: 70,
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-              }}
-            ></div>
-            <div>
-              <p className="p1">Мужские Кроссовки Nike Air Max 270 </p>
-              <b className="b1">12 999руб.</b>
+          <div className="items">
+            <div className="cartItem margin1">
+              <div
+                className="cartItemImg"
+                style={{
+                  backgroundImage: `url(${whiteandblack})`,
+                  height: 70,
+                  width: 70,
+                  backgroundSize: "contain",
+                  backgroundRepeat: "no-repeat",
+                }}
+              ></div>
+              <div>
+                <p className="p1">Мужские Кроссовки Nike Air Max 270 </p>
+                <b className="b1">12 999руб.</b>
+              </div>
+              <img
+                src={btnremove}
+                alt=""
+                width={32}
+                height={32}
+                className="btnremove"
+              />
             </div>
-            <img
-              src={btnremove}
-              alt=""
-              width={32}
-              height={32}
-              className="btnremove"
-            />
-          </div>
-          <div className="cartItem">
-            <div
-              className="cartItemImg"
-              style={{
-                backgroundImage: `url(${whiteandblack})`,
-                height: 70,
-                width: 70,
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-              }}
-            ></div>
-            <div>
-              <p className="p1">Мужские Кроссовки Nike Air Max 270 </p>
-              <b className="b1">12 999руб.</b>
+            <div className="cartItem">
+              <div
+                className="cartItemImg"
+                style={{
+                  backgroundImage: `url(${whiteandblack})`,
+                  height: 70,
+                  width: 70,
+                  backgroundSize: "contain",
+                  backgroundRepeat: "no-repeat",
+                }}
+              ></div>
+              <div>
+                <p className="p1">Мужские Кроссовки Nike Air Max 270 </p>
+                <b className="b1">12 999руб.</b>
+              </div>
+              <img
+                src={btnremove}
+                alt=""
+                width={32}
+                height={32}
+                className="btnremove"
+              />
             </div>
-            <img
-              src={btnremove}
-              alt=""
-              width={32}
-              height={32}
-              className="btnremove"
-            />
           </div>
-        </div>
-        <div>
-          <div className="cartTotalBlock">
-            <ul>
-              <li className="endprice">
-                <span>Итого:</span>
-                <div className="dashedline"></div>
-                <b>20 498 руб.</b>
-              </li>
-              <li className="endprice">
-                <span>Налог 5%</span>
-                <div className="dashedline"></div>
-                <b>1074 руб.</b>
-              </li>
-            </ul>
-            <div className="centergreenbtn">
-              <button className="ligtengreen">
-                Оформить заказ <img src={arrow} alt="" className="arrowpng" />
-              </button>
+          <div>
+            <div className="cartTotalBlock">
+              <ul>
+                <li className="endprice">
+                  <span>Итого:</span>
+                  <div className="dashedline"></div>
+                  <b>20 498 руб.</b>
+                </li>
+                <li className="endprice">
+                  <span>Налог 5%</span>
+                  <div className="dashedline"></div>
+                  <b>1074 руб.</b>
+                </li>
+              </ul>
+              <div className="centergreenbtn">
+                <button className="ligtengreen">
+                  Оформить заказ <img src={arrow} alt="" className="arrowpng" />
+                </button>
+              </div>
             </div>
           </div>
         </div>

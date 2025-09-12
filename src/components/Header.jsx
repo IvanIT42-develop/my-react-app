@@ -22,7 +22,7 @@ import shoponclick from "../assets/img/shoponclick.png";
 import btnremove from "../assets/img/btn-remove.png";
 import arrow from "../assets/img/arrow.png";
 import Card from "./Card/Card";
-function Header() {
+function Header(props) {
   return (
     <div>
       <header className="header1">
@@ -36,7 +36,12 @@ function Header() {
 
         <ul className="manyicons">
           <li>
-            <img src={purchases} alt="" className="captionicons" />
+            <img
+              onClick={props.onClickCard}
+              src={purchases}
+              alt=""
+              className="captionicons a"
+            />
             <span>1205руб</span>
           </li>
           <li>

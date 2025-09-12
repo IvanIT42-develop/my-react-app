@@ -1,18 +1,30 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import likeclick from "../../assets/img/likeclick.png"
 import green from "../../assets/img/greenandwhite.png"; 
 import plus from "../../assets/img/plus.png"; 
 import classes from "../Card/Card.module.css"
+import { useState } from 'react';
 function Card(props) {
-
+const [isAdded,setIsAdded]=useState(false)
+useEffect(()=>{
+  console.log(1)
+}
+,[isAdded])
+const onClickPlus = ()=>{
+  setIsAdded(!isAdded)
+}
   return (
     <div>
+      <div>
+        
+      </div>
       <div className={classes.card}>
         <div className={classes.paddinglike}>
           <img
             src={likeclick}
             alt=""
-            className={ classes.likebtn}
+            className={classes.likebtn}
+            onClick={props.onFavorite}
           />
         </div>
 
@@ -32,10 +44,10 @@ function Card(props) {
           </div>
           <div className={`${classes.plusbtn} ${classes.padding}`}>
             <img
-              src={plus}
+              src={isAdded ? props.shoponclick : plus}
               alt=""
               className={classes.padding}
-              onClick={props.onClick}
+              onClick={onClickPlus}
             />
           </div>
         </div>
