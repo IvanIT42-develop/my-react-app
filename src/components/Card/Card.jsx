@@ -4,38 +4,39 @@ import green from "../../assets/img/greenandwhite.png";
 import plus from "../../assets/img/plus.png"; 
 import classes from "../Card/Card.module.css"
 import { useState } from 'react';
-function Card(props) {
-const [isAdded,setIsAdded]=useState(false)
-useEffect(()=>{
-  console.log(1)
-}
-,[isAdded])
-const onClickPlus = ()=>{
-  setIsAdded(!isAdded)
-}
+function Card({ onFavorite, imageUrl,title, shoponclick, onPlus,price,}) {
+  const [isAdded, setIsAdded] = useState(false);
+
+  const onClickPlus = (obj) => {
+    onPlus({
+       // Добавляем ID
+      name: title,
+      price: price,
+      imageUrl:imageUrl
+    });
+    setIsAdded(!isAdded);
+  };
   return (
     <div>
-      <div>
-        
-      </div>
+      <div></div>
       <div className={classes.card}>
         <div className={classes.paddinglike}>
           <img
             src={likeclick}
             alt=""
             className={classes.likebtn}
-            onClick={props.onFavorite}
+            onClick={onFavorite}
           />
         </div>
 
         <img
-          src={props.imageUrl}
+          src={imageUrl}
           alt=""
           width={133}
           height={112}
           className={classes.greensneak}
         />
-        <span className={classes.span1}>{props.title}</span>
+        <span className={classes.span1}>{title}</span>
 
         <div className={classes.priceandadd}>
           <div>
@@ -44,7 +45,7 @@ const onClickPlus = ()=>{
           </div>
           <div className={`${classes.plusbtn} ${classes.padding}`}>
             <img
-              src={isAdded ? props.shoponclick : plus}
+              src={isAdded ? shoponclick : plus}
               alt=""
               className={classes.padding}
               onClick={onClickPlus}

@@ -40,7 +40,11 @@ const imageMap = {
 
 
 function App() {
-  const [items,setItems] =useState([])
+    const [cartItems, setCartItems] = useState([
+     
+    ]);
+  const [items, setItems] = useState([
+  ]);
   const [cardOpened, setcardOpened] = useState(false);
   const [count, setCount] = useState(0);
 useEffect(()=>{
@@ -53,11 +57,19 @@ useEffect(()=>{
      
    });
 },[])
+const onAddToCard=(obj)=>{
+setCartItems([...cartItems,obj]);
+}
+
   return (
     <>
       <div className="divpapa">
         {cardOpened ? (
-          <Drawer onCloseCard={() => setcardOpened(false)} />
+          <Drawer
+            imageadd={imageMap}
+            items={cartItems}
+            onCloseCard={() => setcardOpened(false)}
+          />
         ) : null}
         <Header onClickCard={() => setcardOpened(true)} />
         <div className="content ">
@@ -69,20 +81,23 @@ useEffect(()=>{
             </div>
           </div>
           <div className=" content1">
-            {items.map((val) => (
+            {items.map((item) => (
               <Card
-                key={val.id}
-                onClick={() => console.log(val)}
-                title={val.name}
-                price={val.price}
-                imageUrl={imageMap[val.imageUrl]}
-                greentick={val.greentick}
+                key={item.id}
+                onClick={() => console.log(item)}
+                title={item.name}
+                price={item.price}
+                imageUrl={imageMap[item.imageUrl]}
+                greentick={item.greentick}
                 plusbtn={plus}
-                onPlus={() => {}}
+                onPlus={(obj) => {
+                  return onAddToCard(obj);
+                }}
                 shoponclick={shoponclick}
                 onFavorite={() => {
                   console.log("Добавили в закладки");
                 }}
+                imageadd={imageMap}
               />
             ))}
           </div>

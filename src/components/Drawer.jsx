@@ -22,9 +22,9 @@ import shoponclick from "../assets/img/shoponclick.png";
 import btnremove from "../assets/img/btn-remove.png";
 import arrow from "../assets/img/arrow.png";
 import Card from "./Card/Card";
-function Drawer(props) {
+function Drawer({ items=[], onCloseCard ,imageadd}) {
   return (
-    <div  className="overlay">
+    <div className="overlay">
       <div>
         <div className="drawer">
           <h2>
@@ -35,57 +35,40 @@ function Drawer(props) {
               width={32}
               height={32}
               className="btnremove"
-             onClick={props.onCloseCard}
+              onClick={onCloseCard}
             />
           </h2>
 
-          <div className="items">
-            <div className="cartItem margin1">
-              <div
-                className="cartItemImg"
-                style={{
-                  backgroundImage: `url(${whiteandblack})`,
-                  height: 70,
-                  width: 70,
-                  backgroundSize: "contain",
-                  backgroundRepeat: "no-repeat",
-                }}
-              ></div>
-              <div>
-                <p className="p1">Мужские Кроссовки Nike Air Max 270 </p>
-                <b className="b1">12 999руб.</b>
+          <div style={{flex:0.9}}>
+            {items.map((obj) => (
+              <div className="items">
+                <div>
+                  <div className="cartItem">
+                    <div
+                      className="cartItemImg"
+                      style={{
+                        backgroundImage: `url(${obj.imageUrl})`,
+                        height: 70,
+                        width: 70,
+                        backgroundSize: "contain",
+                        backgroundRepeat: "no-repeat",
+                      }}
+                    ></div>
+                    <div>
+                      <p className="p1">{obj.name} </p>
+                      <b className="b1">{obj.price}</b>
+                    </div>
+                    <img
+                      src={btnremove}
+                      alt=""
+                      width={32}
+                      height={32}
+                      className="btnremove"
+                    />
+                  </div>
+                </div>
               </div>
-              <img
-                src={btnremove}
-                alt=""
-                width={32}
-                height={32}
-                className="btnremove"
-              />
-            </div>
-            <div className="cartItem">
-              <div
-                className="cartItemImg"
-                style={{
-                  backgroundImage: `url(${whiteandblack})`,
-                  height: 70,
-                  width: 70,
-                  backgroundSize: "contain",
-                  backgroundRepeat: "no-repeat",
-                }}
-              ></div>
-              <div>
-                <p className="p1">Мужские Кроссовки Nike Air Max 270 </p>
-                <b className="b1">12 999руб.</b>
-              </div>
-              <img
-                src={btnremove}
-                alt=""
-                width={32}
-                height={32}
-                className="btnremove"
-              />
-            </div>
+            ))}
           </div>
           <div>
             <div className="cartTotalBlock">
