@@ -22,8 +22,11 @@ import btnremove from "./assets/img/btn-remove.png";
 import arrow from "./assets/img/arrow.png";
 import Card from "./components/Card/Card";
 import Drawer from "./components/Drawer";
+import box from "./assets/img/box.png";
+import left from "./assets/img/left.png";
 import { useEffect, useState } from "react";
 import { useContext } from "react";
+import axios from "axios";
 const imageMap = {
   blackandwhitenike: blackandwhitenike,
   whiteandblack: whiteandblack,
@@ -40,48 +43,87 @@ const imageMap = {
 
 
 function App() {
-    const [cartItems, setCartItems] = useState([
-     
-    ]);
+    const [cartItems, setCartItems] = useState([]);
+        const [searchValue, setSearchValue] = useState('');
   const [items, setItems] = useState([
   ]);
+
   const [cardOpened, setcardOpened] = useState(false);
   const [count, setCount] = useState(0);
 useEffect(()=>{
- fetch("https://68c4305081ff90c8e61b84db.mockapi.io/items")
-   .then((res) => {
-     return res.json();
-   })
-   .then((json) => {
-     setItems(json);
-     
-   });
+   axios
+     .get("https://68c4305081ff90c8e61b84db.mockapi.io/items")
+     .then((res) => {
+       setItems(res.data);
+     })
+     axios.get("https://68c4305081ff90c8e61b84db.mockapi.io/card")
+     .then((res) => {
+       setCartItems(res.data);
+     })
+    
+
 },[])
 const onAddToCard=(obj)=>{
+axios.post("https://68c4305081ff90c8e61b84db.mockapi.io/card",obj)
 setCartItems([...cartItems,obj]);
-}
 
+}
+const onChangeSerachInput =(event)=>{
+  setSearchValue(event.target.value)
+  
+}
+const filtereditems =
+  items.filter((item)=>item.name.toLowerCase().includes(searchValue.toLowerCase()))
+const onRemoveItem=(id)=>{
+  
+   setCartItems((prev)=> prev.filter(item => item.id !== id));
+ console.log(id)
+}
   return (
     <>
       <div className="divpapa">
         {cardOpened ? (
           <Drawer
+          leftBtn={left}
+            boxBtn={box}
+            onRemoweDrawerItem={onRemoveItem}
             imageadd={imageMap}
             items={cartItems}
             onCloseCard={() => setcardOpened(false)}
+            // Pass the function
           />
         ) : null}
         <Header onClickCard={() => setcardOpened(true)} />
         <div className="content ">
           <div className="zagolovokwithserach">
-            <h1 className="h12">Кроссовки</h1>
+            <h1 className="h12">
+              {searchValue
+                ? `Поиск по запросу:"${searchValue}"`
+                : "Все кроссовки"}
+            </h1>
             <div className="searchinput">
               <img src={search} alt="" className="search" />
-              <input type="text" placeholder="Поиск..." className="input1" />
+              {searchValue ? (
+                <img
+                  src={btnremove}
+                  alt=""
+                  style={{ position: "absolute", right: 45, bottom: 506 }}
+                  onClick={() => {
+                    setSearchValue("");
+                  }}
+                />
+              ) : null}
+              <input
+                type="text"
+                placeholder="Поиск..."
+                className="input1"
+                onChange={onChangeSerachInput}
+                value={searchValue}
+              />
             </div>
           </div>
           <div className=" content1">
-            {items.map((item) => (
+            {filtereditems.map((item) => (
               <Card
                 key={item.id}
                 onClick={() => console.log(item)}

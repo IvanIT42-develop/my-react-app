@@ -22,7 +22,7 @@ import shoponclick from "../assets/img/shoponclick.png";
 import btnremove from "../assets/img/btn-remove.png";
 import arrow from "../assets/img/arrow.png";
 import Card from "./Card/Card";
-function Drawer({ items=[], onCloseCard ,imageadd}) {
+function Drawer({ items=[],leftBtn, onCloseCard ,boxBtn,onRemoweDrawerItem}) {
   return (
     <div className="overlay">
       <div>
@@ -38,38 +38,67 @@ function Drawer({ items=[], onCloseCard ,imageadd}) {
               onClick={onCloseCard}
             />
           </h2>
-
-          <div style={{flex:0.9}}>
-            {items.map((obj) => (
-              <div className="items">
-                <div>
-                  <div className="cartItem">
-                    <div
-                      className="cartItemImg"
-                      style={{
-                        backgroundImage: `url(${obj.imageUrl})`,
-                        height: 70,
-                        width: 70,
-                        backgroundSize: "contain",
-                        backgroundRepeat: "no-repeat",
-                      }}
-                    ></div>
-                    <div>
-                      <p className="p1">{obj.name} </p>
-                      <b className="b1">{obj.price}</b>
+          {items.length > 0 ? (
+            <div
+              className="scrollforgood"
+              style={{ marginBottom: 20, flex: 0.9, overflow: "scroll" }}
+            >
+              {items.map((obj) => (
+                <div key={obj.id} className="items">
+                  <div>
+                    <div className="cartItem">
+                      <div
+                        className="cartItemImg"
+                        style={{
+                          backgroundImage: `url(${obj.imageUrl})`,
+                          height: 70,
+                          width: 70,
+                          backgroundSize: "contain",
+                          backgroundRepeat: "no-repeat",
+                        }}
+                      ></div>
+                      <div>
+                        <p className="p1">{obj.name} </p>
+                        <b className="b1">{obj.price}</b>
+                      </div>
+                      <img
+                        src={btnremove}
+                        alt=""
+                        width={32}
+                        height={32}
+                        className="btnremove"
+                        onClick={() => onRemoweDrawerItem(obj.id)}
+                      />
                     </div>
-                    <img
-                      src={btnremove}
-                      alt=""
-                      width={32}
-                      height={32}
-                      className="btnremove"
-                    />
                   </div>
                 </div>
+              ))}
+            </div>
+          ) : (
+            <div>
+              <div>
+                <div className="boxBtn">
+                  <img src={boxBtn} alt="" width={120} />
+                </div>
+
+                <div className="h23">
+                  <h2 style={{ marginBottom: 10 }}>Корзина пустая</h2>
+                </div>
+                <div className="reasonwhynotsneakers">
+                  <p className="reasonwhynotsneakers">
+                    Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.
+                  </p>
+                </div>
               </div>
-            ))}
-          </div>
+              <div style={{ position: "relative" }}>
+                <div className="leftBtn">
+                  <img src={leftBtn} alt="" className="leftBtn" />
+                </div>
+                <button className="returnTosneakers" onClick={onCloseCard}>Вернуться назад</button>
+              </div>
+            </div>
+          )}
+
           <div>
             <div className="cartTotalBlock">
               <ul>
