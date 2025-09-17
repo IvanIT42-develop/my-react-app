@@ -3,29 +3,37 @@ import likeclick from "../../assets/img/likeclick.png"
 import green from "../../assets/img/greenandwhite.png"; 
 import plus from "../../assets/img/plus.png"; 
 import classes from "../Card/Card.module.css"
+import like from "../../assets/img/like.png"
 import { useState } from 'react';
 function Card({ onFavorite, imageUrl,title, shoponclick, onPlus,price,}) {
   const [isAdded, setIsAdded] = useState(false);
-
+    const [favorites,setFavorites]=useState(false)
+    
+  
+    const onUnLiked=()=>{
+      setFavorites(!favorites)
+    }
   const onClickPlus = (obj) => {
     onPlus({
-       // Добавляем ID
+     
       name: title,
       price: price,
-      imageUrl:imageUrl
+      imageUrl: imageUrl,
     });
     setIsAdded(!isAdded);
   };
+
   return (
     <div>
-      <div></div>
+      
       <div className={classes.card}>
         <div className={classes.paddinglike}>
           <img
-            src={likeclick}
+            src={favorites ? likeclick : like }
             alt=""
             className={classes.likebtn}
-            onClick={onFavorite}
+            onClick={onUnLiked}
+            style={{border:'none'}}
           />
         </div>
 

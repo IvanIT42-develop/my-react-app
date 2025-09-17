@@ -43,13 +43,12 @@ const imageMap = {
 
 
 function App() {
-    const [cartItems, setCartItems] = useState([]);
-        const [searchValue, setSearchValue] = useState('');
-  const [items, setItems] = useState([
-  ]);
-
+  const [cartItems, setCartItems] = useState([]);
+  const [searchValue, setSearchValue] = useState('');
+  const [items, setItems] = useState([]);
+  const [favorite,setFavorite]=useState(false)
+  const [favoriteSneakers,setfavoriteSneakers]=useState([])
   const [cardOpened, setcardOpened] = useState(false);
-  const [count, setCount] = useState(0);
 useEffect(()=>{
    axios
      .get("https://68c4305081ff90c8e61b84db.mockapi.io/items")
@@ -63,27 +62,55 @@ useEffect(()=>{
     
 
 },[])
-const onAddToCard=(obj)=>{
-axios.post("https://68c4305081ff90c8e61b84db.mockapi.io/card",obj)
-setCartItems([...cartItems,obj]);
+const onAddToCard = async (obj) => {
+  try {
+    // 1. Отправляем запрос и ЖДЕМ ответа
+    const { data } = await axios.post(
+      `https://68c4305081ff90c8e61b84db.mockapi.io/card`,
+      obj
+    );
 
-}
+    // 2. Добавляем в состояние объект, который вернул сервер (с правильным id)
+    setCartItems((prev) => [...prev, data]);
+  } catch (error) {
+    console.error("Ошибка при добавлении в корзину:", error);
+    alert("Не удалось добавить товар в корзину");
+  }
+};
+const onFavorite = async (obj) => {
+  try {
+    // 1. Отправляем запрос и ЖДЕМ ответа
+    const { data } = await axios.post(
+      `https://68c4305081ff90c8e61b84db.mockapi.io/card`,
+      obj
+    );
+
+    // 2. Добавляем в состояние объект, который вернул сервер (с правильным id)
+    setCartItems((prev) => [...prev, data]);
+  } catch (error) {
+    console.error("Ошибка при добавлении в корзину:", error);
+    alert("Не удалось добавить товар в корзину");
+  }
+};
 const onChangeSerachInput =(event)=>{
   setSearchValue(event.target.value)
   
 }
-const filtereditems =
-  items.filter((item)=>item.name.toLowerCase().includes(searchValue.toLowerCase()))
+const filtereditems = items.filter((item)=>item.name.toLowerCase().includes(searchValue.toLowerCase()))
 const onRemoveItem=(id)=>{
-  
+ axios.delete(`https://68c4305081ff90c8e61b84db.mockapi.io/card/${id}`);
    setCartItems((prev)=> prev.filter(item => item.id !== id));
- console.log(id)
+
 }
+ const onUnLiked = () => {
+   setFavorite(!favorite);
+ };
   return (
     <>
       <div className="divpapa">
         {cardOpened ? (
           <Drawer
+        
           leftBtn={left}
             boxBtn={box}
             onRemoweDrawerItem={onRemoveItem}
@@ -137,7 +164,7 @@ const onRemoveItem=(id)=>{
                 }}
                 shoponclick={shoponclick}
                 onFavorite={() => {
-                  console.log("Добавили в закладки");
+                  onUnLiked
                 }}
                 imageadd={imageMap}
               />
