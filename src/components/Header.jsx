@@ -45,7 +45,12 @@ function Header(props) {
             <span>1205руб</span>
           </li>
           <li>
-            <img src={like} alt="" className="captionicons" />
+            <img
+              src={like}
+              alt=""
+              className="captionicons"
+              onClick={props.onClickLike}
+            />
             <span>Закладки</span>
           </li>
           <li>
